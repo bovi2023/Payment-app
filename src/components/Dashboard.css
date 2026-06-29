@@ -1,0 +1,37 @@
+.dashboard {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.stats {
+  display: flex;
+  gap: 15px;
+}
+
+.stat-card {
+  flex: 1;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.stat-label {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.stat-value {
+  margin: 10px 0 0 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+}

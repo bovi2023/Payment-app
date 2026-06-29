@@ -1,0 +1,63 @@
+.transaction-list {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.transaction-list h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.transactions-table th {
+  background: #f5f5f5;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 2px solid #ddd;
+}
+
+.transactions-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.transactions-table tbody tr:hover {
+  background: #f9f9f9;
+}
+
+.status {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.status.completed {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+@media (max-width: 768px) {
+  .transactions-table {
+    font-size: 0.9rem;
+  }
+  
+  .transactions-table th,
+  .transactions-table td {
+    padding: 8px;
+  }
+}
