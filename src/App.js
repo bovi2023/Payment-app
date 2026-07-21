@@ -1,22 +1,34 @@
 import React from 'react';
-import Dashboard from './components/Dashboard';
-import TransactionList from './components/TransactionList';
-import PaymentForm from './components/PaymentForm';
-import Header from './components/Header';
+import { AuthProvider } from './context/AuthContext';
+import { PaymentProvider } from './context/PaymentContext';
+import { NotificationProvider } from './context/NotificationContext';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import Notifications from './components/Notifications';
+import { useContext } from 'react';
+import { AuthContext } from './context/AuthContext';
 import './App.css';
+
+function AppContent() {
+  const { isAuthenticated } = useContext(AuthContext);
+
+  return (
+    <div className="app">
+      <Notifications />
+      {isAuthenticated ? <Dashboard /> : <Login />}
+    </div>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <main className="app-main">
-        <div className="container">
-          <Dashboard />
-          <PaymentForm />
-        </div>
-        <TransactionList />
-      </main>
-    </div>
+    <AuthProvider>
+      <PaymentProvider>
+        <NotificationProvider>
+          <AppContent />
+        </NotificationProvider>
+      </PaymentProvider>
+    </AuthProvider>
   );
 }
 
